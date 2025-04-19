@@ -87,13 +87,13 @@ exports.deleteReminder = (req, res) => {
 };
 
 // Automatically delete expired reminders
-const deleteExpiredReminders = async () => {
-  try {
-    await connection.query('DELETE FROM reminders WHERE reminder_time < NOW()');
-  } catch (error) {
-    console.error('Failed to delete expired reminders:', error);
-  }
-};
+//const deleteExpiredReminders = async () => {
+ // try {
+  //  await connection.query('DELETE FROM reminders WHERE reminder_time < NOW()');
+  //} catch (error) {
+  //  console.error('Failed to delete expired reminders:', error);
+  //}
+//};
 
 // Schedule the deletion of expired reminders every hour
-setInterval(deleteExpiredReminders,  360000); // 1 hour in milliseconds
+//setInterval(deleteExpiredReminders,  360000); // 1 hour in milliseconds
