@@ -31,7 +31,7 @@ exports.deleteFeedback = (req, res) => {
         res.status(204).send();
     });
 };
-
+// respond to feedback
 exports.respondToFeedback = (req, res) => {
     const { id } = req.params;
     const { response_text } = req.body;
