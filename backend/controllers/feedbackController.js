@@ -6,7 +6,7 @@ exports.getAllFeedback = (req, res) => {
         res.json(results);
     });
 };
-
+//create a new feedback
 exports.createFeedback = (req, res) => {
     const { user_id, feedback_text } = req.body;
     connection.query('INSERT INTO feedback (user_id, feedback_text) VALUES (?, ?)', [user_id, feedback_text], (err, results) => {
