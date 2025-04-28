@@ -14,7 +14,7 @@ exports.createFeedback = (req, res) => {
         res.status(201).json({ id: results.insertId, user_id, feedback_text });
     });
 };
-
+//update feedback
 exports.updateFeedback = (req, res) => {
     const { id } = req.params;
     const { feedback_text } = req.body;
