@@ -1,6 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const taskRoutes = require('./routers/taskRoutes');
+
+const userRoutes = require('./routers/userRoutes');
+const categoryRoutes = require('./routers/categoryRoutes');
+const FeedbackRoutes =require('./routers/feedbackRoutes');
+
 const reminderController = require('./routers/remainderrouter'); // Assuming you have this file
 
 
@@ -17,6 +22,12 @@ app.use(express.json());
 
 // Routes
 app.use('/auth/api', taskRoutes);
+
+app.use('/auth/api', userRoutes);
+app.use('/auth/api/category', categoryRoutes);
+app.use('/auth/api', FeedbackRoutes);
+
+
 app.use('/auth/api', reminderController); // Add this line to use the reminder controller
 
 // Start the server
