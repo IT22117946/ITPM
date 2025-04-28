@@ -23,7 +23,7 @@ exports.updateFeedback = (req, res) => {
         res.json({ id, feedback_text });
     });
 };
-
+// delete feedback
 exports.deleteFeedback = (req, res) => {
     const { id } = req.params;
     connection.query('DELETE FROM feedback WHERE id = ?', [id], (err) => {
