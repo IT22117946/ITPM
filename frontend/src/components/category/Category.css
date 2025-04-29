@@ -249,6 +249,25 @@
   animation: spin 1s linear infinite;
 }
 
+.reset-btn {
+  background: linear-gradient(45deg, #64748b, #475569);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: linear-gradient(45deg, #475569, #374151);
+  transform: translateY(-2px);
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
