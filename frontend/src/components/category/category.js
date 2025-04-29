@@ -236,7 +236,30 @@ const validateForm = () => {
           </button>
         </div>
 
-        
+        <div className="search-container">
+            <input
+                type="text"
+                placeholder="Search categories..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="search-input"
+            />
+            <span className="search-count">
+                Found: {filteredCategories.length} categories
+            </span>
+        </div>
+
+
+        <div className="search-container">
+            <input
+                type="text"
+                placeholder="Search categories..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="search-input"
+            />
+            <span className="search-count">Found: {filteredCategories.length} categories</span>
+        </div>
 
         <div className="data-grid">
           <h2 className="grid-header">Data Registry</h2>
