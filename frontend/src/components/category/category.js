@@ -89,6 +89,7 @@ const resetForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+        if (!validateForm()) return;
     try {
       const url = editId
         ? `http://localhost:5000/auth/api/category/categories/${editId}`
@@ -132,6 +133,14 @@ const resetForm = () => {
     }
   };
 
+  const filteredCategories = categories.filter(category =>
+    category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    category.description.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
+
+
+
   const generatePDF = () => {
     const doc = new jsPDF();
     doc.setFontSize(18);
@@ -171,11 +180,9 @@ const validateForm = () => {
 };
 
 // Modify handleSubmit
-const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-    // ... existing submit code
-};
+
+
+
 
 // Add to form JSX
 <div className="input-module">
@@ -228,6 +235,8 @@ const handleSubmit = async (e) => {
             Generate Data Report
           </button>
         </div>
+
+        
 
         <div className="data-grid">
           <h2 className="grid-header">Data Registry</h2>
