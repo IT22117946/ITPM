@@ -1,0 +1,20 @@
+.sort-controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.sort-btn {
+    background: rgba(147, 51, 234, 0.2);
+    border: 1px solid #9333ea;
+    color: #e5e7eb;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sort-btn:hover {
+    background: rgba(147, 51, 234, 0.3);
+    transform: translateY(-2px);
+}
