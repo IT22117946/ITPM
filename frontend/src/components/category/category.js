@@ -179,6 +179,20 @@ const validateForm = () => {
     return Object.keys(newErrors).length === 0;
 };
 
+const [showExportOptions, setShowExportOptions] = useState(false);
+
+const exportToCSV = () => {
+    const csvContent = categories.map(cat => 
+        `${cat.name},${cat.description}`
+    ).join('\n');
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'categories.csv';
+    a.click();
+};
+
 // Modify handleSubmit
 
 
@@ -192,6 +206,7 @@ const validateForm = () => {
     />
     {errors.name && <span className="error-message">{errors.name}</span>}
 </div>
+
 
 
   return (
@@ -303,6 +318,21 @@ const validateForm = () => {
                     </span>
                 </div>
             </div>
+
+                 <div className="export-container">
+                    <button 
+                        className="export-btn"
+                        onClick={() => setShowExportOptions(!showExportOptions)}
+                    >
+                        Export
+                    </button>
+                    {showExportOptions && (
+                        <div className="export-menu">
+                            <button onClick={exportToCSV}>Export as CSV</button>
+                            <button onClick={generatePDF}>Export as PDF</button>
+                        </div>
+                    )}
+                </div>
 
                     <div className="input-group">
                         <input

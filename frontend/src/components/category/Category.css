@@ -111,3 +111,43 @@
 .actions-menu button:hover {
     background: rgba(147, 51, 234, 0.2);
 }
+
+.export-container {
+    position: relative;
+    margin-left: auto;
+}
+
+.export-btn {
+    background: linear-gradient(45deg, #9333ea, #7e22ce);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.export-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: rgba(30, 41, 59, 0.95);
+    border: 1px solid #9333ea;
+    border-radius: 8px;
+    padding: 5px;
+    z-index: 10;
+}
+
+.export-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    text-align: left;
+    border: none;
+    background: none;
+    color: #e5e7eb;
+    cursor: pointer;
+}
+
+.export-menu button:hover {
+    background: rgba(147, 51, 234, 0.2);
+}
