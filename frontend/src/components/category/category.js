@@ -261,6 +261,17 @@ const validateForm = () => {
             <span className="search-count">Found: {filteredCategories.length} categories</span>
         </div>
 
+            <div className="sort-controls">
+                <button 
+                    onClick={() => setSortConfig({
+                        key: 'name',
+                        direction: sortConfig.direction === 'asc' ? 'desc' : 'asc'
+                    })}
+                    className="sort-btn"
+                >
+                    Sort by Name {sortConfig.direction === 'asc' ? '↑' : '↓'}
+                </button>
+            </div>
         <div className="data-grid">
           <h2 className="grid-header">Data Registry</h2>
           <div className="category-nodes">
