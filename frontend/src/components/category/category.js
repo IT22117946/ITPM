@@ -261,6 +261,19 @@ const validateForm = () => {
             <span className="search-count">Found: {filteredCategories.length} categories</span>
         </div>
 
+        <div className="search-container">
+                <input
+                    type="text"
+                    placeholder="Search categories..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="search-input"
+                />
+                <span className="search-count">
+                    Found: {filteredCategories.length} categories
+                </span>
+            </div>
+
             <div className="sort-controls">
                 <button 
                     onClick={() => setSortConfig({
@@ -272,6 +285,26 @@ const validateForm = () => {
                     Sort by Name {sortConfig.direction === 'asc' ? '↑' : '↓'}
                 </button>
             </div>
+
+
+
+            <div className="stats-container">
+                <div className="stat-item">
+                    <span className="stat-label">Total Categories:</span>
+                    <span className="stat-value">{categories.length}</span>
+                </div>
+                <div className="stat-item">
+                    <span className="stat-label">Last Updated:</span>
+                    <span className="stat-value">
+                        {categories.length > 0 
+                            ? new Date(Math.max(...categories.map(c => new Date(c.updated_at)))).toLocaleString()
+                            : 'N/A'
+                        }
+                    </span>
+                </div>
+            </div>
+
+
 
 
                             <input
