@@ -304,6 +304,17 @@ const validateForm = () => {
                 </div>
             </div>
 
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            name="name"
+                            value={name}
+                            onChange={handleInputChange}
+                            className={`form-input ${errors.name ? 'input-error' : ''}`}
+                        />
+                        {errors.name && <span className="error-message">{errors.name}</span>}
+                        <span className="char-count">{name.length}/50</span>
+                    </div>
 
 
 
