@@ -314,9 +314,26 @@ const validateForm = () => {
                         />
                         {errors.name && <span className="error-message">{errors.name}</span>}
                         <span className="char-count">{name.length}/50</span>
-                    </div>
+                        </div>
 
-
+                        <div className="category-actions">
+                            <button 
+                                className="action-toggle"
+                                onClick={() => setActiveMenu(category.id === activeMenu ? null : category.id)}
+                            >
+                                •••
+                            </button>
+                            {activeMenu === category.id && (
+                                <div className="actions-menu">
+                                    <button onClick={() => handleActionClick(category.id, 'edit')}>
+                                        Edit
+                                    </button>
+                                    <button onClick={() => handleActionClick(category.id, 'delete')}>
+                                        Delete
+                                    </button>
+                                </div>
+                            )}
+                        </div>
 
                             <input
                     type="checkbox"

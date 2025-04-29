@@ -70,3 +70,44 @@
     color: #a78bfa;
     font-size: 12px;
 }
+
+
+.category-actions {
+    position: relative;
+}
+
+.action-toggle {
+    background: none;
+    border: none;
+    color: #a78bfa;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.actions-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: rgba(30, 41, 59, 0.95);
+    border: 1px solid #9333ea;
+    border-radius: 8px;
+    padding: 5px;
+    z-index: 10;
+    min-width: 120px;
+}
+
+.actions-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    text-align: left;
+    border: none;
+    background: none;
+    color: #e5e7eb;
+    cursor: pointer;
+}
+
+.actions-menu button:hover {
+    background: rgba(147, 51, 234, 0.2);
+}
