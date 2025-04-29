@@ -272,6 +272,20 @@ const validateForm = () => {
                     Sort by Name {sortConfig.direction === 'asc' ? '↑' : '↓'}
                 </button>
             </div>
+
+
+                            <input
+                    type="checkbox"
+                    checked={selectedCategories.includes(category.id)}
+                    onChange={(e) => {
+                        if (e.target.checked) {
+                            setSelectedCategories([...selectedCategories, category.id]);
+                        } else {
+                            setSelectedCategories(selectedCategories.filter(id => id !== category.id));
+                        }
+                    }}
+                    className="category-checkbox"
+                />
         <div className="data-grid">
           <h2 className="grid-header">Data Registry</h2>
           <div className="category-nodes">
